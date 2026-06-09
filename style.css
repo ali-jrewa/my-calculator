@@ -1,0 +1,291 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:#e3f9ff;
+    transition:0.3s;
+    -webkit-transition:0.3s;
+    -moz-transition:0.3s;
+    -ms-transition:0.3s;
+    -o-transition:0.3s;
+}
+
+/* Landing Page */
+
+#landing-page{
+    position:fixed;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#00c6ff,#0072ff);
+    transition:opacity 1s ease;
+    z-index:999;
+}
+
+.fade-out{
+    opacity:0;
+}
+
+#landing-page h1{
+    color:white;
+    font-size:3rem;
+    animation:zoom 1.5s infinite alternate;
+}
+
+@keyframes zoom{
+    from{
+        transform:scale(1);
+    }
+    to{
+        transform:scale(1.1);
+    }
+}
+
+.hidden{
+    display:none;
+}
+
+/* Header */
+
+#install-btn {
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #00c6ff;
+    background-color: #111827;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    background-color: transparent;
+}
+
+#install-btn:hover {
+    background-color: #00c6ff;
+    color: white;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.header{
+    width:100%;
+    padding:20px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:white;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+.logo{
+    font-size:2rem;
+    font-weight:700;
+
+    background:linear-gradient(
+        45deg,
+        #00c6ff,
+        #0072ff
+    );
+
+    background-clip:text;
+    -webkit-background-clip:text;
+    color:transparent;
+
+    letter-spacing:1px;
+}
+
+.dark-theme .logo{
+     font-size:2rem;
+    font-weight:700;
+    background: linear-gradient(
+        45deg,
+        #33ffd8,
+        #00c6ff
+    );
+     background-clip:text; ;
+    -webkit-background-clip:text;
+    color:transparent;
+    letter-spacing:1px;
+}
+
+#theme-btn{
+    border:none;
+    padding:10px 18px;
+    border-radius:8px;
+    cursor:pointer;
+    background:#0072ff;
+    color:white;
+    font-weight:600;
+    transition:.3s;
+}
+
+#theme-btn:hover{
+
+    transform:translateY(-2px);
+}
+
+/* Calculator Container */
+
+.container{
+    min-height:calc(100vh - 90px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.calculator{
+    background:#3a4452;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 15px 30px rgba(0,0,0,.2);
+    animation:showCalculator .8s ease;
+}
+
+@keyframes showCalculator{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+.calculator form input{
+    border:0;
+    outline:0;
+    width:70px;
+    height:70px;
+    border-radius:12px;
+    background:transparent;
+    color:white;
+    font-size:22px;
+    margin:8px;
+    cursor:pointer;
+    box-shadow:
+        -8px -8px 15px rgba(255,255,255,.1),
+         5px 5px 15px rgba(0,0,0,.2);
+}
+
+.result{
+    display:flex;
+    justify-content:flex-end;
+    margin:20px 0;
+}
+
+.result input{
+    text-align:right;
+    flex:1;
+    font-size:40px;
+    box-shadow:none !important;
+    overflow:hidden;
+}
+
+.equal{
+    width:155px !important;
+    background:#ff9500 !important;
+}
+
+.ac {
+    color: #f13514 !important;
+    font-weight: bold;
+}
+
+.operator{
+    color:#33ffd8 !important;
+}
+
+/* Dark Theme */
+
+.dark-theme{
+    background:#111827;
+}
+
+.dark-theme .header{
+    background:#1f2937;
+}
+
+.dark-theme .calculator{
+    background:#111827;
+}
+
+/* Tablet */
+
+@media(max-width:768px){
+
+    .header{
+        padding:15px 20px;
+    }
+    
+
+    .logo{
+    font-size:1.6rem;
+    }
+
+    .calculator form input{
+        width:60px;
+        height:60px;
+        font-size:20px;
+    }
+
+    .equal{
+        width:135px !important;
+    }
+}
+
+/* Mobile */
+
+@media(max-width:480px){
+
+    #landing-page h1{
+        font-size:2rem;
+        text-align:center;
+        padding:20px;
+    }
+
+    .calculator form input{
+        touch-action: manipulation;
+    }
+
+    .header{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .calculator{
+        width:100%;
+        max-width:350px;
+        padding:15px;
+    }
+
+    .calculator form input{
+        width:55px;
+        height:55px;
+        font-size:18px;
+        margin:5px;
+    }
+
+    .result input{
+        font-size:30px;
+    }
+
+    .equal{
+        width:120px !important;
+    }
+}
