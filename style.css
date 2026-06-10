@@ -53,19 +53,15 @@ body{
 
 /* Header */
 
-#install-btn {
-    margin-left: 70%;
-    padding: 5px;
+#install-btn{
+    padding: 5px 12px;
     border-radius: 10px;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     color: #00c6ff;
     background-color: transparent;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-    transition: all 0.3s ease;
+    border: 2px solid #00c6ff;
+    transition: all .3s ease;
 }
 
 #install-btn:hover {
@@ -84,8 +80,14 @@ body{
     display:flex;
     justify-content:space-between;
     align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
     background:white;
     box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+.header .d-flex{
+    flex-wrap: wrap;
 }
 
 .logo{
@@ -126,10 +128,10 @@ body{
     cursor:pointer;
     background:#0072ff;
     color:white;
-    font-weight:600;
-    transition:.3s;
+    font-weight:700;
      backface-visibility: hidden;
     -webkit-font-smoothing: antialiased;
+    transition:.3s;
 }
 
 #theme-btn:hover{
@@ -144,7 +146,6 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    padding:20px;
 }
 
 .calculator{
@@ -153,6 +154,9 @@ body{
     border-radius:20px;
     box-shadow:0 15px 30px rgba(0,0,0,.2);
     animation:showCalculator .8s ease;
+    max-width: 420px;
+    width:100%;
+    overflow:hidden;
 }
 
 @keyframes showCalculator{
@@ -169,6 +173,9 @@ body{
 
 }
 
+form{
+    width:100%;
+}
 
 .calculator form input{
     border:0;
@@ -260,6 +267,12 @@ body{
         font-size:2rem;
         text-align:center;
         padding:20px;
+    }
+    
+    #install-btn,
+    #theme-btn{
+        font-size:14px;
+        padding:8px 12px;
     }
 
     .calculator form input{

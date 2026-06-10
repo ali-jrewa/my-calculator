@@ -10,6 +10,7 @@
 
    <!-- Styles -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -23,19 +24,21 @@
     <div id="app" class="hidden">
         <header class="header">
              <div class="logo">
-                🧮 My Calculator
+                <i class="bi bi-calculator-fill"></i> My Calculator
             </div>
 
-            <button id="install-btn" hidden>
-                Install App
-            </button>
+            <div class="d-flex gap-2 align-items-center ms-auto">
+                <button id="install-btn" class="btn btn-outline-info" hidden>
+                    📲 Install
+                </button>
 
-            <button id="theme-btn">
-                🌙 Dark Mode
-            </button>
+                <button id="theme-btn" class="btn btn-primary">
+                    🌙 Dark Mode
+                </button>
+            </div>
         </header>
         <div class="container">
-        <main class="calculator">
+        <main class="calculator card border-0 shadow-lg" >
             <form onsubmit="return false;">
                 <div class="result">
                     <input type="text" name="result" readonly />
